@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, Router, Link, Switch } from "react-router-dom";
-import Home from "./components/Home/Home";
+import { Route, Router, Link, Switch } from 'react-router-dom';
+
+import Home from './components/Home/Home';
+import Board from './components/game-board/Board';
 import './App.scss';
 
 class App extends React.Component {
@@ -19,25 +21,27 @@ class App extends React.Component {
   restartLoadingIcon = () => {
     var svg = React.findDOMNode(this.refs.loadingicon);
     svg[0].setCurrentTime(0);
-  }
+  };
 
   render() {
     const { loading } = this.state;
     if (loading) {
       return (
-        <div className="loading">
+        <div className='loading'>
           <p>Loading</p>
         </div>
-      )
+      );
     }
 
     return (
       <div>
-        <Route exact path="/" component={Home} />
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/board' component={Board} />
+        </Switch>
       </div>
     );
   }
 }
 
 export default App;
-
