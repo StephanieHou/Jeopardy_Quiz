@@ -131,7 +131,7 @@ class Home extends React.Component {
                         <p class="home-subtitle">
                             Test Your Knowledge
                         </p>
-                        <a href="/">
+                        <a href="/board">
                             <p>Click To Play</p>
                         </a>
                     </div>
