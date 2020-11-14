@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, Router, Link, Switch } from "react-router-dom";
-import Home from "./components/Home/Home";
+import { Route, Router, Link, Switch } from 'react-router-dom';
+import Home from './components/Home/Home';
+import Board from './components/game-board/Board';
 import Logo from "./components/Images/Quipardy.svg";
 import './App.scss';
 
@@ -35,16 +36,18 @@ class App extends React.Component {
           <div class="squares-common square-one"></div>
           <div class="squares-common square-two"></div>
         </div>
-      )
+      );
     }
 
     return (
       <div>
-        <Route exact path="/" component={Home} />
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/board' component={Board} />
+        </Switch>
       </div>
     );
   }
 }
 
 export default App;
-

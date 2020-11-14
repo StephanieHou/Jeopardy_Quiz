@@ -1,12 +1,11 @@
-import React from "react";
+import React from 'react';
 import './Home.scss';
 
 class Home extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-        }
-    };
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
     render() {
         return (
@@ -132,7 +131,7 @@ class Home extends React.Component {
                         <p class="home-subtitle">
                             Test Your Knowledge
                         </p>
-                        <a href="/">
+                        <a href="/board">
                             <p>Click To Play</p>
                         </a>
                     </div>
