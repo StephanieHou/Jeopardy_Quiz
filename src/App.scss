@@ -8,8 +8,22 @@ body {
 }
 
 
+@font-face {
+    font-family: "Mexcellent";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Mexcellent"), url("./Fonts/Mexcellent.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "KeepCalm";
+    font-style: normal;
+    font-weight: normal;
+    src: local("KeepCalm"), url("./Fonts/KeepCalm.ttf") format("truetype");
+}
+
 .loading {
-    background-color: white;
+    background-color: black;
     height: 100vh;
     min-height: 100vh;
     display: flex;
@@ -22,30 +36,78 @@ body {
     background-size: cover;
 
     p {
-        font-family: "Inner City";
         font-weight: bold;
     }
-}
 
-polygon {
-    fill: black;
-}
+    svg {
+        width: 70px;
+    }
 
-linearGradient stop {
-    stop-color: black;
-    stop-opacity: 1;
-}
+    .rect {
+        fill: none;
+    }
 
-.loading-first {
-    fill: url(#firstLoadingGradient);
-}
+    .logoText {
+        font-family: "Mexcellent";
+        font-size: 500px;
+        fill: url(#firstLoadingGradient);
+    }
 
-.loading-second {
-    fill: url(#secondLoadingGradient);
-}
+    .squares-common {
+        height: 8vw;
+        max-height: 100%;
+        width: 8vw;
+        margin: auto;
+        position: absolute;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border-radius: 0%;
+    }
 
-.loading-third {
-    fill: url(#thirdLoadingGradient);
+    .square-one {
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        box-shadow: 0 0 0 0.1vw #ff1177, 0 0 1vw 0 #ff1177, inset 0 0 0.5vw 0 #ff1177;
+        animation: squareOne 4s 0.99s ease infinite;
+        -moz-animation: squareOne 4s 0.99s ease infinite;
+        /* Firefox */
+        -webkit-animation: squareOne 4s 0.99s ease infinite;
+        /* Safari and Chrome */
+        -o-animation: squareOne 4s 0.99s ease infinite;
+        /* Opera */
+    }
+
+    .square-two {
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        box-shadow: 0 0 0 0.1vw #c663ff, 0 0 1vw 0 #c663ff, inset 0 0 0.5vw 0 #c663ff;
+        animation: squareTwo 4s 0.99s ease infinite;
+        -moz-animation: squareTwo 4s 0.99s ease infinite;
+        /* Firefox */
+        -webkit-animation: squareTwo 4s 0.99s ease infinite;
+        /* Safari and Chrome */
+        -o-animation: squareTwo 4s 0.99s ease infinite;
+        /* Opera */
+    }
+
+    linearGradient stop {
+        &.first {
+            stop-color: #ff1177;
+            stop-opacity: 1;
+        }
+
+        &.second {
+            stop-color: #c663ff;
+            stop-opacity: 1;
+        }
+    }
 }
 
 @keyframes spin {
@@ -55,5 +117,23 @@ linearGradient stop {
 
     to {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes squareOne {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-180deg);
+    }
+}
+
+@keyframes squareTwo {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
     }
 }
