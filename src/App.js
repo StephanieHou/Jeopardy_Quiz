@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Route, Router, Link, Switch } from "react-router-dom";
+import Home from "./components/Home/Home";
+import './App.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: true,
+    };
+  }
+
+  componentDidMount() {
+    setTimeout(() => this.setState({ loading: false }), 2500);
+  }
+
+  restartLoadingIcon = () => {
+    var svg = React.findDOMNode(this.refs.loadingicon);
+    svg[0].setCurrentTime(0);
+  }
+
+  render() {
+    const { loading } = this.state;
+    if (loading) {
+      return (
+        <div className="loading">
+          <p>Loading</p>
+        </div>
+      )
+    }
+
+    return (
+      <div>
+        <Route exact path="/" component={Home} />
+      </div>
+    );
+  }
 }
 
 export default App;
+
