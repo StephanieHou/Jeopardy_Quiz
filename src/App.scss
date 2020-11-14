@@ -9,6 +9,20 @@ div {
     height: 100%;
 }
 
+@font-face {
+    font-family: "Mexcellent";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Mexcellent"), url("./Fonts/Mexcellent.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "KeepCalm";
+    font-style: normal;
+    font-weight: normal;
+    src: local("KeepCalm"), url("./Fonts/KeepCalm.ttf") format("truetype");
+}
+
 .loading {
     background-color: white;
     height: 100vh;
@@ -23,7 +37,6 @@ div {
     background-size: cover;
 
     p {
-        font-family: "Inner City";
         font-weight: bold;
     }
 }

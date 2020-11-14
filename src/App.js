@@ -13,7 +13,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    setTimeout(() => this.setState({ loading: false }), 2500);
+    setTimeout(() => this.setState({ loading: false }), 1000);
   }
 
   restartLoadingIcon = () => {

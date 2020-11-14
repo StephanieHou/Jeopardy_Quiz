@@ -38,31 +38,49 @@ $color-line-5: #8100ff;
     width: 100%;
     height: 100%;
     position: relative;
-    img {
-        position: absolute;
-        &:nth-child(1) {
-            width: 1100px;
-            left: -500px;
-            top: -350px;
-        }
+    background-color: black;
 
-        &:nth-child(2) {
-            width: 1100px;
-            right: -450px;
-            top: -350px;
-        }
+    svg{
+        width: 100%;
+        height: 100%;
+    }
 
-        &:nth-child(3) {
-            width: 1100px;
-            left: -450px;
-            bottom: -350px;
-        }
-
-        &:nth-child(4) {
-            width: 1100px;
-            right: -500px;
-            bottom: -350px;
-        }
+    #red {
+        fill: none;
+        opacity: 0.15;
+        stroke: #ff1177;
+        stroke-width: 12;
+        stroke-miterlimit: 10;
+        animation: ShowHome 4s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+    
+    #purple {
+        fill: none;
+        opacity: 0.15;
+        stroke: #c663ff;
+        stroke-width: 12;
+        stroke-miterlimit: 10;
+        animation: show 4s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+    
+    #white {
+        fill: none;
+        opacity: 0.15;
+        stroke: white;
+        stroke-width: 6;
+        stroke-miterlimit: 10;
+        stroke-dasharray: 200;
+        stroke-dashoffset: 800;
+        animation: DrawHome 4s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
     }
 }
 
@@ -72,26 +90,29 @@ $color-line-5: #8100ff;
     right: 50%;
     transform: translate(50%, -50%);
     height: 160px;
-    width: 600px;
+    width: 650px;
+    display: flex;
+    justify-content: center;
 
     p {
         text-align: center;
-        font-size: 25px;
+        font-size: 18px;
         font-weight: 400;
-        font-family: "Forque";
-        letter-spacing: 4px;
+        letter-spacing: 3px;
     }
 
     .home-subtitle {
         animation: FadeIn 1s linear forwards;
         animation-delay: 2s;
         opacity: 0;
-        margin-top: -10px;
+        margin-top: -65px;
+        color: white;
+        font-family: 'KeepCalm', sans-serif; 
     }
 
     a {
         text-align: center;
-        width: 150px;
+        width: 180px;
         margin: 0 auto;
         display: block;
         animation: FadeIn 1s linear forwards;
@@ -103,14 +124,15 @@ $color-line-5: #8100ff;
         }
 
         p {
-            font-size: 18px;
-            background: rgb(255, 97, 56);
+            font-size: 16px;
+            font-weight: 400;
+            background: #ff1177;
             background: linear-gradient(
                 90deg,
-                rgba(255, 97, 56, 1) 0%,
-                rgba(255, 180, 0, 1) 33%,
-                rgba(0, 163, 136, 1) 65%,
-                rgba(0, 90, 179, 1) 100%
+                #ff1158 0%,
+                #fa378b 33%,
+                #c663ff 65%,
+                #c781f0 100%
             );
             background-size: 250% 200%;
             background-position: center left;
@@ -118,6 +140,7 @@ $color-line-5: #8100ff;
             border-radius: 4px;
             color: white;
             letter-spacing: 2px;
+            font-family: 'KeepCalm', sans-serif; 
             &:hover {
                 animation: SlideRight 1s linear forwards;
                 text-decoration: none;
@@ -126,80 +149,47 @@ $color-line-5: #8100ff;
     }
 
     h1 {
-        font-size: 103px;
+        font-size: 115px;
         margin: 0px;
         overflow: auto;
+        margin-top: -55px;
+        padding: 55px;
         .title-part {
-            font-family: "Inner City", sans-serif;
+            font-family: "Mexcellent", sans-serif;
             text-transform: uppercase;
             display: block;
-            color: black;
+            color: white;
             float: left;
             opacity: 0;
             padding-bottom: 10px;
+            transition: all 0.2s ease-in;
+            animation: FadeInNeon 1s linear forwards;
+            letter-spacing: 10px;
 
-            &.ch1 {
-                animation: FadeIn 1s linear forwards;
-                transition: all 0.2s ease-in;
-                &:hover {
-                    @include longshadow($color-line-1, $color-bg, 30);
-                }
+            &:hover{
+                animation: FadeInNeon 1s infinite alternate;
             }
+
             &.ch2 {
-                animation: FadeIn 1s linear forwards;
                 animation-delay: 0.2s;
-                transition: all 0.2s ease-in;
-                &:hover {
-                    @include longshadow($color-line-2, $color-line-1, 30);
-                }
             }
             &.ch3 {
-                animation: FadeIn 1s linear forwards;
                 animation-delay: 0.4s;
-                transition: all 0.2s ease-in;
-                &:hover {
-                    @include longshadow($color-line-3, $color-line-2, 30);
-                }
             }
             &.ch4 {
-                animation: FadeIn 1s linear forwards;
                 animation-delay: 0.6s;
-                transition: all 0.2s ease-in;
-                &:hover {
-                    @include longshadow($color-line-4, $color-line-3, 30);
-                }
             }
             &.ch5 {
-                animation: FadeIn 1s linear forwards;
                 animation-delay: 0.8s;
-                transition: all 0.2s ease-in;
-                &:hover {
-                    @include longshadow($color-line-5, $color-line-4, 30);
-                }
             }
             &.ch6 {
-                animation: FadeIn 1s linear forwards;
                 animation-delay: 1s;
-                transition: all 0.2s ease-in;
-                &:hover {
-                    @include longshadow($color-line-4, $color-line-5, 30);
-                }
             }
             &.ch7 {
-                animation: FadeIn 1s linear forwards;
                 animation-delay: 1.2s;
-                transition: all 0.2s ease-in;
-                &:hover {
-                    @include longshadow($color-line-3, $color-line-4, 30);
-                }
             }
             &.ch8 {
-                animation: FadeIn 1s linear forwards;
                 animation-delay: 1.4s;
-                transition: all 0.2s ease-in;
-                &:hover {
-                    @include longshadow($color-line-2, $color-line-3, 30);
-                }
             }
         }
     }
@@ -208,93 +198,45 @@ $color-line-5: #8100ff;
 /* Media Queries*/
 
 @media screen and (max-width: 960px) {
-    .home-bg {
-        img {
-            &:nth-child(1) {
-                width: 1000px;
-                left: -550px;
-                top: -350px;
-            }
 
-            &:nth-child(2) {
-                width: 1000px;
-                right: -500px;
-                top: -350px;
-            }
-
-            &:nth-child(3) {
-                width: 1000px;
-                left: -500px;
-                bottom: -350px;
-            }
-
-            &:nth-child(4) {
-                width: 1000px;
-                right: -550px;
-                bottom: -350px;
-            }
-        }
-    }
 }
 
 @media screen and (max-width: 650px) {
     .home-title {
-        width: 480px;
+        width: 510px;
         h1 {
             font-size: 81px;
         }
     }
     .home-bg {
-        img {
-            &:nth-child(1) {
-                width: 900px;
-                left: -550px;
-                top: -300px;
-            }
-
-            &:nth-child(2) {
-                width: 900px;
-                right: -500px;
-                top: -300px;
-            }
-
-            &:nth-child(3) {
-                width: 900px;
-                left: -500px;
-                bottom: -300px;
-            }
-
-            &:nth-child(4) {
-                width: 900px;
-                right: -550px;
-                bottom: -300px;
-            }
+        svg{
+            width: 200%;
         }
     }
 }
 
 @media screen and (max-width: 490px) {
     .home-title {
-        width: 380px;
+       // width: 380px;
         h1 {
             font-size: 64px;
         }
 
         p {
-            font-size: 22px;
+            font-size: 18px;
         }
     }
 }
 
 @media screen and (max-width: 380px) {
     .home-title {
-        width: 340px;
+       // width: 340px;
         h1 {
             font-size: 58px;
         }
 
         p {
-            font-size: 19px;
+            font-size: 16px;
         }
     }
 }
@@ -328,5 +270,48 @@ $color-line-5: #8100ff;
 
     to {
         background-position: center right;
+    }
+}
+
+@keyframes FadeInNeon {
+    from {
+        opacity: 0;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 60px #ff1177,
+            0 0 100px #ff1177, 0 0 150px #ff1177;
+    }
+
+    to {
+        opacity: 1;
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff1177, 0 0 25px #ff1177, 0 0 30px #ff1177,
+            0 0 50px #ff1177, 0 0 75px #ff1177;
+    }
+}
+
+@keyframes Neon {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 60px #ff1177,
+            0 0 100px #ff1177, 0 0 150px #ff1177;
+    }
+    to {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff1177, 0 0 25px #ff1177, 0 0 30px #ff1177,
+            0 0 50px #ff1177, 0 0 75px #ff1177;
+    }
+}
+
+@keyframes DrawHome {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes ShowHome {
+    0% {
+        opacity: 0.15;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0.15;
     }
 }
