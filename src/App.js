@@ -10,6 +10,7 @@ import Loader from './components/Loader';
 const App = () => {
   const [loading, setLoading] = useState(true);
   const [questionID, setQuestionID] = useState(null);
+  const [categoryName, setCategotyName] = useState('');
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 2000);
@@ -24,12 +25,24 @@ const App = () => {
           <Route
             exact
             path='/board'
-            render={() => <Board setQuestionID={setQuestionID} />}
+            render={() => (
+              <Board
+                setQuestionID={setQuestionID}
+                setCategotyName={setCategotyName}
+              />
+            )}
           />
           <Route
             exact
             path='/question'
-            render={() => <Question id={questionID} />}
+            render={() => (
+              <Question
+                id={questionID}
+                categoryName={categoryName}
+                setQuestionID={setQuestionID}
+                setCategotyName={setCategotyName}
+              />
+            )}
           />
         </Switch>
       </div>
