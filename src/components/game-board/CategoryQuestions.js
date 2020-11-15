@@ -4,9 +4,15 @@ import { Link } from 'react-router-dom';
 import Category from './Category';
 import QuestionHolder from './QuestionHolder';
 
-const CategoryQuestions = ({ category, questions, setQuestionID }) => {
-  const getQestionID = (id) => {
+const CategoryQuestions = ({
+  category,
+  questions,
+  setQuestionID,
+  setCategotyName,
+}) => {
+  const getQestionID = (id, categoryName) => {
     setQuestionID(id);
+    setCategotyName(categoryName);
   };
 
   return (
@@ -15,9 +21,13 @@ const CategoryQuestions = ({ category, questions, setQuestionID }) => {
         <Category categoryName={category} />
       </div>
       <div className='d-flex flex-column p-4 border'>
-        {questions.map(({ question, id }) => (
-          <Link to='question' key={id} onClick={() => getQestionID(id)}>
-            <QuestionHolder question={question} />
+        {questions.map(({ id, value }) => (
+          <Link
+            to='question'
+            key={id}
+            onClick={() => getQestionID(id, category)}
+          >
+            <QuestionHolder value={value} />
           </Link>
         ))}
       </div>
