@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { fakeData } from '../../staticData/questionsData';
 
-const Question = ({ question }) => {
-  return <div className='p-4 border mb-3 text-center'>{question}</div>;
+const getQuestionData = (id) => {
+  return fakeData.map(({ questions }) =>
+    questions.filter((question) => question.id === id)
+  )[0][0];
+};
+
+const Question = ({ id }) => {
+  const [questionData, setQuestionData] = useState(null);
+
+  useEffect(() => {
+    setQuestionData(getQuestionData(id));
+  }, [id]);
+
+  console.log(questionData);
+  return <div>hello</div>;
 };
 
 export default Question;
