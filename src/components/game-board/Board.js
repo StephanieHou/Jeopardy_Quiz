@@ -2,7 +2,7 @@ import React from 'react';
 import { fakeData } from '../../staticData/questionsData';
 import CategoryQuestions from './CategoryQuestions';
 
-const Board = ({ setQuestionID }) => {
+const Board = ({ setQuestionID, setCategotyName }) => {
   return (
     <div className='container-xl d-flex justify-content-around'>
       {fakeData.map(({ category, questions }) => (
@@ -11,6 +11,7 @@ const Board = ({ setQuestionID }) => {
           category={category}
           questions={questions}
           setQuestionID={setQuestionID}
+          setCategotyName={setCategotyName}
         />
       ))}
     </div>
