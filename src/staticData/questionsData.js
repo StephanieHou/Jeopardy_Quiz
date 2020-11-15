@@ -1,5 +1,3 @@
-import { v4 as id } from 'uuid';
-
 export const fakeData = [
   {
     category: 'Category1',
