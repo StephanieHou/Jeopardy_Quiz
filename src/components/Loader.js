@@ -19,19 +19,19 @@ const Loader = () => {
         <rect
           x='163.89'
           y='142.5'
-          class='rect'
+          className='rect'
           width='197.18'
           height='201.13'
         />
         <text
           transform='matrix(1.0753 0 0 1 98.0005 416.8027)'
-          class='logoText'
+          className='logoText'
         >
           Q
         </text>
       </svg>
-      <div class='squares-common square-one'></div>
-      <div class='squares-common square-two'></div>
+      <div className='squares-common square-one'></div>
+      <div className='squares-common square-two'></div>
     </div>
   );
 };
