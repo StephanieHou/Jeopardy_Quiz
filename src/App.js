@@ -11,6 +11,7 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const [questionID, setQuestionID] = useState(null);
   const [categoryName, setCategotyName] = useState('');
+  const [score, setScore] = useState(0);
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 2000);
@@ -27,6 +28,7 @@ const App = () => {
             path='/board'
             render={() => (
               <Board
+                score={score}
                 setQuestionID={setQuestionID}
                 setCategotyName={setCategotyName}
               />
@@ -38,6 +40,8 @@ const App = () => {
             render={() => (
               <Question
                 id={questionID}
+                setScore={setScore}
+                score={score}
                 categoryName={categoryName}
                 setQuestionID={setQuestionID}
                 setCategotyName={setCategotyName}

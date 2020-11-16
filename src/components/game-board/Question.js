@@ -2,11 +2,14 @@ import React, { useEffect, useState } from 'react';
 import Answers from './Answers'
 import { fakeData } from '../../staticData/questionsData';
 import Timer from './Timer';
+import {  useHistory } from 'react-router-dom';
 
 
 
-const Question = ({ id, categoryName, setQuestionID, setCategotyName }) => {
+const Question = ({ id, categoryName, setQuestionID, setCategotyName, setScore, score }) => {
   const [questionData, setQuestionData] = useState(null);
+  const history = useHistory();
+
 
   const getQuestionData = (id) => {
     const {questions} = categoryName &&  fakeData
@@ -28,12 +31,35 @@ const Question = ({ id, categoryName, setQuestionID, setCategotyName }) => {
       setQuestionData(getQuestionData(id));
   }, [id, categoryName]);
 
+  const getAnswerAndChangeScore = ({target}) => {
+    const answer = target.innerText
+    if(answer){
+      if(answer === questionData.correct_answer) {
+        setScore(prevScore => prevScore + questionData.value )
+      } else {
+        if(score > 0) {
+          setScore(prevScore => {
+            if(prevScore - questionData.value < 0) {
+              return 0
+            } 
+           return prevScore - questionData.value
+          } )
+        } 
+      }
+      history.push('/board')
+    }
+  }
+  
+
+
+
 
   return (
     <div >
       <div className="w-75 mx-auto">
         <div className="border p-2 mt-5 text-center">{questionData && questionData.question}</div>
-          {questionData &&  <Answers answers={questionData.answers} /> }
+          {questionData &&  <Answers getAnswer={getAnswerAndChangeScore} 
+          answers={questionData.answers} /> }
       </div>
       <Timer />
     </div>

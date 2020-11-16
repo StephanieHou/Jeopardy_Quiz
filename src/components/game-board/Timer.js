@@ -8,16 +8,13 @@ const Timer = () => {
     const timerInterval = setInterval(() => {
       setSeconds((seconds) => seconds - 1);
     }, 1000);
-
     return () => clearInterval(timerInterval);
   }, [seconds]);
 
   return (
-    <div className="w-25 mx-auto mt-5">
+    <div className='w-25 mx-auto mt-5'>
       {seconds < 0 && <Redirect to='/board' />}
-      <div className="border p-3 text-center">
-        Timer: {seconds}
-      </div>
+      <div className='border p-3 text-center'>Timer: {seconds}</div>
     </div>
   );
 };
