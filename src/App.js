@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from './components/Home/Home';
-import Board from './components/game-board/Board';
-import Logo from './components/Images/Quipardy.svg';
-import './App.scss';
-import Question from './components/game-board/Question';
+import Board from './components/GameBoard/Board';
+import Question from './components/GameBoard/Question';
 import Loader from './components/Loader';
+import './App.scss';
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -23,8 +22,7 @@ const App = () => {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route
-            exact
-            path='/board'
+            exact path='/board'
             render={() => (
               <Board
                 setQuestionID={setQuestionID}
@@ -33,8 +31,7 @@ const App = () => {
             )}
           />
           <Route
-            exact
-            path='/question'
+            exact path='/question'
             render={() => (
               <Question
                 id={questionID}

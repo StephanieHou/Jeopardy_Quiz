@@ -1,10 +1,10 @@
 import React from 'react';
-import { fakeData } from '../../staticData/questionsData';
+import { fakeData } from '../../StaticData/QuestionsApi';
 import CategoryQuestions from './CategoryQuestions';
 
 const Board = ({ setQuestionID, setCategotyName }) => {
   return (
-    <div className='container-xl d-flex justify-content-around'>
+    <div className='container-xl d-flex justify-content-around board-div'>
       {fakeData.map(({ category, questions }) => (
         <CategoryQuestions
           key={category}

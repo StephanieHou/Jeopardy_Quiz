@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Answers from './Answers'
-import { fakeData } from '../../staticData/questionsData';
 import Timer from './Timer';
+import {fakeData} from '../../StaticData/QuestionsApi';
 
 
 
