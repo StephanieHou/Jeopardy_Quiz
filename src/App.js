@@ -4,7 +4,7 @@ import Home from './components/Home/Home';
 import Rules from './components/Rules/Rules';
 import RulesInfo from './components/Rules/RulesInfo';
 import Board from './components/GameBoard/Board';
-import Question from './components/GameBoard/Question';
+import Question from './components/GameBoard/Questions/Question';
 import Loader from './components/Loader';
 import './App.scss';
 

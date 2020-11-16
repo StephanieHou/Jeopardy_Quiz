@@ -34,56 +34,6 @@ $color-line-5: #8100ff;
     position: relative;
 }
 
-.rules-bg {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    background-color: black;
-
-    svg {
-        width: 100%;
-        height: 100%;
-    }
-
-    #red {
-        fill: none;
-        opacity: 0.15;
-        stroke: #ff1177;
-        stroke-width: 12;
-        stroke-miterlimit: 10;
-        animation: ShowHome 4s;
-        animation-fill-mode: forwards;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease-in-out;
-    }
-
-    #purple {
-        fill: none;
-        opacity: 0.15;
-        stroke: #c663ff;
-        stroke-width: 12;
-        stroke-miterlimit: 10;
-        animation: show 4s;
-        animation-fill-mode: forwards;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease-in-out;
-    }
-
-    #white {
-        fill: none;
-        opacity: 0.15;
-        stroke: white;
-        stroke-width: 6;
-        stroke-miterlimit: 10;
-        stroke-dasharray: 200;
-        stroke-dashoffset: 800;
-        animation: DrawHome 4s;
-        animation-fill-mode: forwards;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease-in-out;
-    }
-}
-
 .rule-title {
     position: absolute;
     top: 50%;
@@ -171,9 +121,6 @@ $color-line-5: #8100ff;
 }
 
 @media screen and (max-width: 650px) {
-    .rules-bg svg {
-        width: 200%;
-    }
 }
 
 @media screen and (max-width: 490px) {

@@ -1,13 +1,14 @@
 import React from 'react';
 import { fakeData } from '../../StaticData/QuestionsApi';
-import CategoryQuestions from './CategoryQuestions';
+import CategoryQuestions from './Category/Questions';
 import Background from '../Background/Background';
+import Score from './Score';
 import './Board.scss';
 
-const Board = ({ setQuestionID, setCategoryName }) => {
+const Board = ({ setQuestionID, setCategoryName, score }) => {
   return (
     <div class="board-wrapper">
-      <Background/>
+      <Background />
       <div className="board-content">
         <div className="board-title">
           <h1>
@@ -20,6 +21,9 @@ const Board = ({ setQuestionID, setCategoryName }) => {
             <span className="title-part ch7">D</span>
             <span className="title-part ch8">Y</span>
           </h1>
+        </div>
+        <div className="text-center score-div">
+          <Score score={score} />
         </div>
         <div className='container-xl d-flex justify-content-around  board-div'>
           {fakeData.map(({ category, questions }) => (

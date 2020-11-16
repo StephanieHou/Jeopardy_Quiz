@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Category from './Category';
+import Category from './Name';
 import QuestionHolder from './QuestionHolder';
 
-const CategoryQuestions = ({
+const Questions = ({
   category,
   questions,
   setQuestionID,
@@ -30,4 +30,4 @@ const CategoryQuestions = ({
   );
 };
 
-export default CategoryQuestions;
+export default Questions;

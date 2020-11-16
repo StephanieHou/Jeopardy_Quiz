@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Category = ({ categoryName }) => {
+const Name = ({ categoryName }) => {
   return <div class="category-name-text">{categoryName}</div>;
 };
-export default Category;
+export default Name;

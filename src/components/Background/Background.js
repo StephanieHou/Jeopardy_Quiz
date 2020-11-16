@@ -1,10 +1,11 @@
 import React from 'react';
+import './Background.scss';
 
 const Background = () => {
     return (
-        <div className="home-bg">
-            <svg version="1.1" id="home-anim" x="0px" y="0px" viewBox="0 0 1820 1080">
-                <g id="home">
+        <div className="site-bg">
+            <svg version="1.1" x="0px" y="0px" viewBox="0 0 1820 1080">
+                <g>
                     <clipPath id="cache">
                         <rect id="masque" y="0.4" width="1820" height="1080" />
                     </clipPath>

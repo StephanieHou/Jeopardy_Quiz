@@ -1,6 +1,11 @@
 /* Board Page */
 .board-wrapper {
     background: black;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
 }
 
 .board-content {
@@ -23,7 +28,7 @@
             display: block;
             color: white;
             padding-bottom: 10px;
-            transition: all 0.2s ease-in;
+            transition: text-shadow 0.2s ease-in;
             animation: Neon 1s infinite alternate;
             letter-spacing: 20px;
 
@@ -92,6 +97,14 @@
     }
 }
 
+.score-div {
+    h3 {
+        color: white;
+        font-family: "KeepCalm";
+        font-size: 16px;
+    }
+}
+
 @keyframes Neon {
     from {
         text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 60px #ff1177,
@@ -110,7 +123,8 @@
 }
 
 @media screen and (max-width: 940px) {
-    .category-name, .category-name-text {
+    .category-name,
+    .category-name-text {
         min-height: 105px;
     }
 }
