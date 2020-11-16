@@ -9,7 +9,7 @@ const CategoryQuestions = ({
   setQuestionID,
   setCategoryName,
 }) => {
-  const getQuestionID = (id, categoryName) => {
+  const getQuestion = (id, categoryName) => {
     setQuestionID(id);
     setCategoryName(categoryName);
   };
@@ -21,11 +21,7 @@ const CategoryQuestions = ({
       </div>
       <div className='d-flex flex-column category-questions'>
         {questions.map(({ id, value }) => (
-          <Link
-            to='question'
-            key={id}
-            onClick={() => getQuestionID(id, category)}
-          >
+          <Link to='question' key={id} onClick={() => getQuestion(id, category)}>
             <QuestionHolder value={value} />
           </Link>
         ))}
