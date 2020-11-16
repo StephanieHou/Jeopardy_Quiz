@@ -1,6 +1,7 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Answers from './Answers'
 import { fakeData } from '../../staticData/questionsData';
+import Timer from './Timer';
 
 
 
@@ -8,7 +9,6 @@ const Question = ({ id, categoryName, setQuestionID, setCategotyName }) => {
   const [questionData, setQuestionData] = useState(null);
 
   const getQuestionData = (id) => {
-    console.log(id)
     const {questions} = categoryName &&  fakeData
     .filter(el => el.category === categoryName)[0]
 
@@ -35,6 +35,7 @@ const Question = ({ id, categoryName, setQuestionID, setCategotyName }) => {
         <div className="border p-2 mt-5 text-center">{questionData && questionData.question}</div>
           {questionData &&  <Answers answers={questionData.answers} /> }
       </div>
+      <Timer />
     </div>
   );
 };
