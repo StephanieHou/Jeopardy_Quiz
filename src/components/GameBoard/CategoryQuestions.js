@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import Category from './Category';
 import QuestionHolder from './QuestionHolder';
 
@@ -8,24 +7,24 @@ const CategoryQuestions = ({
   category,
   questions,
   setQuestionID,
-  setCategotyName,
+  setCategoryName,
 }) => {
-  const getQestionID = (id, categoryName) => {
+  const getQuestionID = (id, categoryName) => {
     setQuestionID(id);
-    setCategotyName(categoryName);
+    setCategoryName(categoryName);
   };
 
   return (
-    <div className='d-flex flex-column m-3'>
-      <div className='p-4 border text-center'>
+    <div className='d-flex flex-column category-column'>
+      <div className='text-center category-name'>
         <Category categoryName={category} />
       </div>
-      <div className='d-flex flex-column p-4 border'>
+      <div className='d-flex flex-column category-questions'>
         {questions.map(({ id, value }) => (
           <Link
             to='question'
             key={id}
-            onClick={() => getQestionID(id, category)}
+            onClick={() => getQuestionID(id, category)}
           >
             <QuestionHolder value={value} />
           </Link>

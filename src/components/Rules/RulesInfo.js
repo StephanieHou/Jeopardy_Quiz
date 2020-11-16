@@ -1,7 +1,7 @@
 import React from 'react';
-import './Home.scss';
+import './Rules.scss';
 
-class Home extends React.Component {
+class RulesInfo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -9,10 +9,10 @@ class Home extends React.Component {
 
     render() {
         return (
-            <div className='homepage'>
-                <div className="home-bg">
-                    <svg version="1.1" id="home-anim" x="0px" y="0px" viewBox="0 0 1820 1080">
-                        <g id="home">
+            <div className='rules'>
+                <div className="rules-bg">
+                    <svg version="1.1" x="0px" y="0px" viewBox="0 0 1820 1080">
+                        <g>
                             <clipPath id="cache">
                                 <rect id="masque" y="0.4" width="1820" height="1080" />
                             </clipPath>
@@ -116,24 +116,9 @@ class Home extends React.Component {
                         </g>
                     </svg>
                 </div>
-                <div className="home-title">
+                <div className="rule-info">
+                    <p>Rules</p>
                     <div>
-                        <h1>
-                            <span className="title-part ch1">Q</span>
-                            <span className="title-part ch2">U</span>
-                            <span className="title-part ch3">I</span>
-                            <span className="title-part ch4">P</span>
-                            <span className="title-part ch5">A</span>
-                            <span className="title-part ch6">R</span>
-                            <span className="title-part ch7">D</span>
-                            <span className="title-part ch8">Y</span>
-                        </h1>
-                        <p class="home-subtitle">
-                            Test Your Knowledge
-                        </p>
-                        <a href="/rules">
-                            <p>Click To Play</p>
-                        </a>
                     </div>
                 </div>
             </div >
@@ -141,4 +126,4 @@ class Home extends React.Component {
     }
 }
 
-export default Home;
+export default RulesInfo;

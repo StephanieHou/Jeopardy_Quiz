@@ -1,0 +1,264 @@
+/* Colors */
+$color-bg: #ffea80;
+$color-title: #ffffd9;
+$color-line-1: #ff6138;
+$color-line-2: #ffb400;
+$color-line-3: #00a388;
+$color-line-4: #005ab3;
+$color-line-5: #8100ff;
+
+/* Functions */
+@function shadow-string($color1, $color2, $length) {
+    $total-length: $length;
+    $string: $color1 0px 0px;
+    @while $length > 0 {
+        $mix-amount: 100 - (($length / $total-length) * 100);
+        $mixed-color: mix($color1, $color2, $mix-amount);
+        $string-addition: $length + px $length + px;
+        $string: $mixed-color $string-addition, $string;
+        $length: $length - 1;
+    }
+    @return $string;
+}
+
+@mixin longshadow($color1, $color2, $length) {
+    text-shadow: shadow-string($color1, $color2, $length);
+}
+
+/* Rules Body */
+
+.rules {
+    height: 100%;
+    background: white;
+    overflow: hidden;
+    position: relative;
+}
+
+.rules-bg {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: black;
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    #red {
+        fill: none;
+        opacity: 0.15;
+        stroke: #ff1177;
+        stroke-width: 12;
+        stroke-miterlimit: 10;
+        animation: ShowHome 4s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+
+    #purple {
+        fill: none;
+        opacity: 0.15;
+        stroke: #c663ff;
+        stroke-width: 12;
+        stroke-miterlimit: 10;
+        animation: show 4s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+
+    #white {
+        fill: none;
+        opacity: 0.15;
+        stroke: white;
+        stroke-width: 6;
+        stroke-miterlimit: 10;
+        stroke-dasharray: 200;
+        stroke-dashoffset: 800;
+        animation: DrawHome 4s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+}
+
+.rule-title {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    width: 650px;
+    display: flex;
+    justify-content: center;
+
+    p {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 400;
+        letter-spacing: 3px;
+    }
+
+    .rule-subtitle {
+        animation: FadeIn 1s linear forwards;
+        opacity: 0;
+        color: white;
+        font-family: "KeepCalm", sans-serif;
+        animation-delay: 1s;
+    }
+
+    .rule-buttons {
+        overflow: auto;
+        display: flex;
+    }
+
+    a {
+        text-align: center;
+        width: 180px;
+        margin: 0 auto;
+        display: block;
+        animation: FadeIn 1s linear forwards;
+        animation-delay: 1.5s;
+        opacity: 0;
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: 400;
+            background: #ff1177;
+            background: linear-gradient(90deg, #ff1158 0%, #fa378b 33%, #c663ff 65%, #c781f0 100%);
+            background-size: 250% 200%;
+            background-position: center left;
+            padding: 10px;
+            border-radius: 4px;
+            color: white;
+            letter-spacing: 2px;
+            font-family: "KeepCalm", sans-serif;
+            &:hover {
+                animation: SlideRight 1s linear forwards;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.rule-info {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    height: 160px;
+    width: 650px;
+    display: flex;
+    justify-content: center;
+
+    p {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 400;
+        letter-spacing: 3px;
+        color: white;
+    }
+}
+
+/* Media Queries*/
+
+@media screen and (max-width: 960px) {
+}
+
+@media screen and (max-width: 650px) {
+    .rules-bg svg {
+        width: 200%;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .rule-title {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .rule-buttons {
+        flex-direction: column;
+    }
+}
+
+/* Animation */
+
+@keyframes FadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes FadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes SlideRight {
+    from {
+        background-position: center left;
+    }
+
+    to {
+        background-position: center right;
+    }
+}
+
+@keyframes FadeInNeon {
+    from {
+        opacity: 0;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 60px #ff1177,
+            0 0 100px #ff1177, 0 0 150px #ff1177;
+    }
+
+    to {
+        opacity: 1;
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff1177, 0 0 25px #ff1177, 0 0 30px #ff1177,
+            0 0 50px #ff1177, 0 0 75px #ff1177;
+    }
+}
+
+@keyframes Neon {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 60px #ff1177,
+            0 0 100px #ff1177, 0 0 150px #ff1177;
+    }
+    to {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff1177, 0 0 25px #ff1177, 0 0 30px #ff1177,
+            0 0 50px #ff1177, 0 0 75px #ff1177;
+    }
+}
+
+@keyframes DrawHome {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes ShowHome {
+    0% {
+        opacity: 0.15;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0.15;
+    }
+}

@@ -7,6 +7,14 @@ body {
     // background-color: black !important;
 }
 
+#root {
+    height: 100%;
+}
+
+#root div:first-child {
+    height: 100%;
+}
+
 
 @font-face {
     font-family: "Mexcellent";
