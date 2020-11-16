@@ -30,8 +30,8 @@ const Question = ({ id, categoryName, setQuestionID, setCategoryName }) => {
 
 
   return (
-    <div >
-      <div className="w-75 mx-auto">
+    <div className="question-wrapper">
+      <div className="question-content">
         <div className="border p-2 mt-5 text-center">{questionData && questionData.question}</div>
         {questionData && <Answers answers={questionData.answers} />}
       </div>
