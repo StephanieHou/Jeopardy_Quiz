@@ -13,6 +13,7 @@ const App = () => {
   const [questionID, setQuestionID] = useState(null);
   const [categoryName, setCategoryName] = useState('');
   const [score, setScore] = useState(0);
+  const [selectedQuestion, setSelectedQuestion] = useState([]);
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 2000);
@@ -27,17 +28,20 @@ const App = () => {
           <Route exact path='/rules' component={Rules} />
           <Route exact path='/rulesinfo' component={RulesInfo} />
           <Route
-            exact path='/board'
+            exact
+            path='/board'
             render={() => (
               <Board
                 score={score}
                 setQuestionID={setQuestionID}
                 setCategoryName={setCategoryName}
+                selectedQuestion={selectedQuestion}
               />
             )}
           />
           <Route
-            exact path='/question'
+            exact
+            path='/question'
             render={() => (
               <Question
                 id={questionID}
@@ -46,6 +50,8 @@ const App = () => {
                 categoryName={categoryName}
                 setQuestionID={setQuestionID}
                 setCategoryName={setCategoryName}
+                selectedQuestion={selectedQuestion}
+                setSelectedQuestion={setSelectedQuestion}
               />
             )}
           />
