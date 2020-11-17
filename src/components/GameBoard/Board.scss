@@ -85,9 +85,9 @@
         font-family: "KeepCalm";
         position: relative;
 
-        .isOpen {
-            background: grey;
-            cursor: not-allowed;
+        &.selected-question{
+            pointer-events: none;
+            background: #c663ff;
         }
 
         &:hover {

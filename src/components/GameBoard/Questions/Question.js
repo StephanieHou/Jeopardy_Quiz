@@ -60,7 +60,6 @@ const Question = ({
   };
 
   return (
-<<<<<<< HEAD
     <div className="question-wrapper">
       <Background />
       <div className="question-content">
@@ -68,24 +67,11 @@ const Question = ({
           <div className="question-text text-center">{questionData && questionData.question}</div>
           {questionData &&
             <Answers
-              getAnswer={getAnswerAndChangeScore}
+              getAnswer={getAnswerAndChangeScore} 
               answers={questionData.answers}
             />}
           <Timer />
         </div>
-=======
-    <div className='question-wrapper'>
-      <div className='question-content'>
-        <div className='border p-2 mt-5 text-center'>
-          {questionData && questionData.question}
-        </div>
-        {questionData && (
-          <Answers
-            getAnswer={getAnswerAndChangeScore}
-            answers={questionData.answers}
-          />
-        )}
->>>>>>> origin/basic-functinality
       </div>
     </div>
   );
