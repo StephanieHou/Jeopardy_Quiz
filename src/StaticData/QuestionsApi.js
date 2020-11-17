@@ -5,9 +5,9 @@ export const fakeData = [
         {
           id: 1,
           value: 100,
-          question: 'Question1?',
-          answers: ['answer1', 'answer2', 'answer3', 'answer4'],
-          correct_answer: 'answer1',
+          question: 'It stretches southward to Cape Horn',
+          answers: ['Chile', 'China', 'Spain', 'Egypt'],
+          correct_answer: 'Chile',
         },
         {
           id: 2,

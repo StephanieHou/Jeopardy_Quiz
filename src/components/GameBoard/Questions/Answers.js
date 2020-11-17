@@ -2,9 +2,9 @@ import React from 'react';
 
 const Answers = ({ answers, getAnswer }) => {
   return (
-    <div className='w-50 mx-auto d-flex mt-4 justify-content-around answer-div'>
+    <div className='answer-div'>
       {answers.map((answer) => (
-        <div onClick={getAnswer} className='border p-3' key={answer}>
+        <div onClick={getAnswer} className='answer-choice' key={answer}>
           {answer}
         </div>
       ))}

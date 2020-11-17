@@ -3,6 +3,8 @@ import Answers from './Answers';
 import Timer from '../Timer';
 import { useHistory } from 'react-router-dom';
 import { fakeData } from '../../../StaticData/QuestionsApi';
+import Background from '../../Background/Background';
+import './Question.scss';
 
 
 const Question = ({ id, categoryName, setQuestionID, setCategoryName, setScore, score }) => {
@@ -51,12 +53,18 @@ const Question = ({ id, categoryName, setQuestionID, setCategoryName, setScore, 
 
   return (
     <div className="question-wrapper">
+      <Background />
       <div className="question-content">
-        <div className="border p-2 mt-5 text-center">{questionData && questionData.question}</div>
-        {questionData && <Answers getAnswer={getAnswerAndChangeScore}
-          answers={questionData.answers} />}
+        <div className="question-inner-content">
+          <div className="question-text text-center">{questionData && questionData.question}</div>
+          {questionData &&
+            <Answers
+              getAnswer={getAnswerAndChangeScore}
+              answers={questionData.answers}
+            />}
+          <Timer />
+        </div>
       </div>
-      <Timer />
     </div>
   );
 };
