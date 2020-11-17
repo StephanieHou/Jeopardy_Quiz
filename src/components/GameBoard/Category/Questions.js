@@ -8,6 +8,7 @@ const Questions = ({
   questions,
   setQuestionID,
   setCategoryName,
+  selectedQuestion,
 }) => {
   const getQuestion = (id, categoryName) => {
     setQuestionID(id);
@@ -21,8 +22,15 @@ const Questions = ({
       </div>
       <div className='d-flex flex-column category-questions'>
         {questions.map(({ id, value }) => (
-          <Link to='question' key={id} onClick={() => getQuestion(id, category)}>
-            <QuestionHolder value={value} />
+          <Link
+            to='question'
+            key={id}
+            onClick={() => getQuestion(id, category)}
+          >
+            <QuestionHolder
+              selected={selectedQuestion.includes(id)}
+              value={value}
+            />
           </Link>
         ))}
       </div>
