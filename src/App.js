@@ -19,6 +19,7 @@ const App = () => {
   const [selectedQuestion, setSelectedQuestion] = useState([]);
   const [wager, setWager] = useState(0);
   const [round, setRound] = useState(1);
+  const [seconds, setSeconds] = useState(15);
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 2000);
@@ -39,6 +40,8 @@ const App = () => {
               <Board
                 score={score}
                 round={round}
+                seconds={seconds}
+                setSeconds={setSeconds}
                 setRound={setRound}
                 setQuestionID={setQuestionID}
                 setCategoryName={setCategoryName}
@@ -55,6 +58,8 @@ const App = () => {
                 setScore={setScore}
                 score={score}
                 round={round}
+                seconds={seconds}
+                setSeconds={setSeconds}
                 categoryName={categoryName}
                 setQuestionID={setQuestionID}
                 setCategoryName={setCategoryName}
@@ -67,32 +72,20 @@ const App = () => {
             exact
             path='/thirdround'
             render={() => (
-              <ThirdRound
-                score={score}
-                wager={wager}
-                setWager={setWager}
-              />
+              <ThirdRound score={score} wager={wager} setWager={setWager} />
             )}
           />
           <Route
             exact
             path='/finalquestion'
             render={() => (
-              <FinalQuestion
-                score={score}
-                wager={wager}
-                setScore={setScore}
-              />
+              <FinalQuestion score={score} wager={wager} setScore={setScore} />
             )}
           />
           <Route
             exact
             path='/finalscore'
-            render={() => (
-              <FinalScore
-                score={score}
-              />
-            )}
+            render={() => <FinalScore score={score} />}
           />
         </Switch>
       </div>

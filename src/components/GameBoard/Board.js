@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { roundOne, roundTwo } from '../../StaticData/QuestionsApi';
 import CategoryQuestions from './Category/Questions';
 import Background from '../Background/Background';
@@ -14,8 +14,16 @@ const Board = ({
   selectedQuestion,
   round,
   setRound,
+  seconds,
+  setSeconds,
 }) => {
+  useEffect(() => {
+    const timerInterval = setInterval(() => {
+      setSeconds((seconds) => seconds - 1);
+    }, 1000);
 
+    return () => clearInterval(timerInterval);
+  }, [seconds]);
 
   return (
     <div className='board-wrapper'>
@@ -35,7 +43,12 @@ const Board = ({
         </div>
         <div className='text-center score-div'>
           <Score score={score} />
-          <RoundsTimer round={round} setRound={setRound} />
+          <RoundsTimer
+            round={round}
+            setRound={setRound}
+            seconds={seconds}
+            setSeconds={setSeconds}
+          />
         </div>
         <div className='container-xl d-flex justify-content-around  board-div'>
           {round === 1 &&
