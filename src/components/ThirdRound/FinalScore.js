@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import Background from '../Background/Background';
 import './ThirdRound.scss';
 
-const FinalScore = ({ score, round, setRound, setScore, setSelectedQuestion }) => {
+const FinalScore = ({ score, round, setRound, setScore, setSelectedQuestion, setSeconds }) => {
     const [playAgain, setPlayAgain] = useState(false);
 
     const handleAgain = (event) => {
@@ -11,6 +11,7 @@ const FinalScore = ({ score, round, setRound, setScore, setSelectedQuestion }) =
         setRound(1);
         setScore(0);
         setSelectedQuestion([]);
+        setSeconds(15);
     };
 
     return (
