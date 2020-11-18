@@ -26,11 +26,11 @@ const Questions = ({
             to='question'
             key={id}
             onClick={() => getQuestion(id, category)}
-            className={(selectedQuestion.includes(id) && 'selected-question')}
+            className={
+              selectedQuestion.includes(id) ? 'selected-question' : undefined
+            }
           >
-            <QuestionHolder
-              value={value}
-            />
+            <QuestionHolder value={value} />
           </Link>
         ))}
       </div>
