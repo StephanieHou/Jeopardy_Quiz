@@ -5,12 +5,12 @@ import { ProgressBar } from 'react-bootstrap';
 const Timer = () => {
   const [seconds, setSeconds] = useState(10);
 
-  //useEffect(() => {
-  //  const timerInterval = setInterval(() => {
-  //    setSeconds((seconds) => seconds - 1);
-  //  }, 1000);
-  //  return () => clearInterval(timerInterval);
-  //}, [seconds]);
+  useEffect(() => {
+    const timerInterval = setInterval(() => {
+      setSeconds((seconds) => seconds - 1);
+    }, 1000);
+    return () => clearInterval(timerInterval);
+  }, [seconds]);
 
   return (
     <div className='mx-auto mt-4'>

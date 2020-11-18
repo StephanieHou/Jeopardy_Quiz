@@ -79,10 +79,10 @@ const Question = ({
     }, 1500);
   };
 
-    const bg = isCorrect
+    const showModal = isCorrect
     ? isCorrect === 'correct'
-      ? 'text-success'
-      : 'text-danger'
+      ? 'question-modal success'
+      : 'question-modal fail'
     : null;
 
   return (
@@ -93,9 +93,10 @@ const Question = ({
           <div className='question-text text-center'>
             {questionData && questionData.question}
           </div>
-          <div className="text-center mt-2">
-            <h4 className={bg}>
-              {isCorrect && isCorrect}  
+          <div className={showModal}>
+            <p>{isCorrect && 'Your Answer Is:'}</p>
+            <h4>
+              {isCorrect && isCorrect}
             </h4>
           </div>
           {questionData && (
@@ -104,7 +105,7 @@ const Question = ({
               answers={questionData.answers}
             />
           )}
-          {/* <Timer /> */}
+          <Timer/>
         </div>
       </div>
     </div>

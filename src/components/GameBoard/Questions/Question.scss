@@ -70,3 +70,38 @@
         background-color: #ff1177 !important;
     }
 }
+
+.question-modal{
+    position: absolute;
+    background: black;
+    width: 300px;
+    height: 200px;
+    border-radius: 5px;
+    border: 2px solid white;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-family: 'KeepCalm';
+
+    h4{
+        font-size: 32px;
+        text-transform: capitalize;
+    }
+
+    &.fail{
+        h4{
+            color: #ff1177;
+        }
+    }
+
+    &.success{
+        h4{
+            color: #c663ff;
+        }
+    }
+}

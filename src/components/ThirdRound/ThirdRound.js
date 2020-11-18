@@ -13,6 +13,10 @@ const ThirdRound = ({ setWager, score, wager }) => {
             event.preventDefault();
             setWagerMessage('Bet Must Be Less Than Your Score');
         }
+        else if (wager < 1) {
+            event.preventDefault();
+            setWagerMessage('Bet Must Be More Than 0');
+        }
         else {
             setAcceptWager(true);
         }
