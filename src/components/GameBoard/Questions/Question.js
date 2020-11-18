@@ -16,6 +16,8 @@ const Question = ({
   setSelectedQuestion,
   selectedQuestion,
   round,
+  setSeconds,
+  seconds,
 }) => {
   const [questionData, setQuestionData] = useState(null);
   const game = round === 1 ? roundOne : roundTwo;
@@ -27,6 +29,14 @@ const Question = ({
 
     return id && questions.filter((question) => question.id === id)[0];
   };
+
+  useEffect(() => {
+    const timerInterval = setInterval(() => {
+      setSeconds((seconds) => seconds - 1);
+    }, 1000);
+
+    return () => clearInterval(timerInterval);
+  }, [seconds]);
 
   useEffect(() => {
     // Get data after page reload
