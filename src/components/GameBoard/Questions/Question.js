@@ -104,7 +104,7 @@ const Question = ({
               answers={questionData.answers}
             />
           )}
-          {/* <Timer /> */}
+          <Timer />
         </div>
       </div>
     </div>
