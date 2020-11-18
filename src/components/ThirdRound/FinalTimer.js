@@ -3,21 +3,21 @@ import { Redirect } from 'react-router-dom';
 import { Container, Row, Col, ProgressBar } from 'react-bootstrap'
 
 const FinalTimer = () => {
-    const [seconds, setSeconds] = useState(10);
+    const [fseconds, setFSeconds] = useState(10);
 
-    //useEffect(() => {
-    //   const timerInterval = setInterval(() => {
-    //       setSeconds((seconds) => seconds - 1);
-    //  }, 1000);
-    // return () => clearInterval(timerInterval);
-    //}, [seconds]);
+    useEffect(() => {
+       const timerInterval = setInterval(() => {
+           setFSeconds((fseconds) => fseconds - 1);
+      }, 1000);
+     return () => clearInterval(timerInterval);
+    }, [fseconds]);
 
     return (
         <div className='mx-auto mt-4'>
-            {seconds < 0 && <Redirect to='/finalscore' />}
+            {fseconds < 0 && <Redirect to='/finalscore' />}
             <div class="timer-bar">
-                <p>{seconds}s</p>
-                <ProgressBar variant="danger" animated now={100 - (10 * seconds)} />
+                <p>{fseconds}s</p>
+                <ProgressBar variant="danger" animated now={100 - (10 * fseconds)} />
             </div>
         </div>
     );
