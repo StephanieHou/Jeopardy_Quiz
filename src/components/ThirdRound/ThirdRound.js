@@ -6,10 +6,12 @@ import './ThirdRound.scss';
 
 const ThirdRound = ({ setWager, score, wager }) => {
     const [acceptWager, setAcceptWager] = useState(false);
+    const [wagerMessage, setWagerMessage] = useState('');
 
     const handleSubmit = (event) => {
         if (wager > score) {
             event.preventDefault();
+            setWagerMessage('Bet Must Be Less Than Your Score');
         }
         else {
             setAcceptWager(true);
@@ -43,6 +45,7 @@ const ThirdRound = ({ setWager, score, wager }) => {
                                     placeholder="Enter Amount"
                                     onChange={e => setWager(e.target.value)} />
                             </label>
+                            <p>{wagerMessage}</p>
                             <input type="submit" value="Place Bet" />
                         </form>
                         {acceptWager && <Redirect to='/finalquestion' />}
