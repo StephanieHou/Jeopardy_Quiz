@@ -1,0 +1,214 @@
+/* Board Page */
+.third-wrapper {
+    background: black;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.third-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.third-title {
+    height: auto !important;
+    h1 {
+        font-size: 100px;
+        margin: 0px;
+        display: flex;
+        justify-content: center;
+        .title-part {
+            font-family: "Mexcellent", sans-serif;
+            text-transform: uppercase;
+            display: block;
+            color: white;
+            padding-bottom: 10px;
+            transition: text-shadow 0.2s ease-in;
+            animation: Neon 1s infinite alternate;
+            letter-spacing: 20px;
+
+            &.ch2 {
+                animation-delay: 0.2s;
+            }
+            &.ch3 {
+                animation-delay: 0.4s;
+            }
+            &.ch4 {
+                animation-delay: 0.6s;
+            }
+            &.ch5 {
+                animation-delay: 0.8s;
+            }
+            &.ch6 {
+                animation-delay: 1s;
+            }
+            &.ch7 {
+                animation-delay: 1.2s;
+            }
+            &.ch8 {
+                animation-delay: 1.4s;
+            }
+        }
+    }
+}
+
+.wager-div {
+    color: white;
+    font-family: "KeepCalm";
+    height: 80%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -15px;
+
+    h2 {
+        font-size: 50px;
+    }
+
+    .score-wager {
+        width: 450px;
+        border: 2px solid white;
+        height: 250px;
+        border-radius: 5px;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 20px;
+        background: rgba(255, 255, 255, 0.247);
+        padding: 20px;
+        box-shadow: 3px 0px 72px 8px #ff3e91;
+
+        div {
+            height: auto !important;
+        }
+
+        input[type="text"] {
+            text-align: center;
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: white !important;
+            font-size: 25px;
+            border-bottom: 1px solid white;
+            margin: 30px 0px;
+
+            &::placeholder {
+                color: white;
+            }
+
+            &:focus{
+                outline: none;
+            }
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background: linear-gradient(
+                90deg,
+                #ff1158 0%,
+                #fa378b 33%,
+                #c663ff 65%,
+                #c781f0 100%
+            );
+            background-size: 250% 200%;
+            background-position: center left;
+            color: white;
+            padding: 12px;
+            border: 2px solid white;
+
+            &:hover{
+                animation: SlideRight 1s linear forwards;
+            }
+        }
+
+        label {
+            width: 100%;
+        }
+
+        h3 {
+            font-size: 20px;
+        }
+    }
+}
+
+.timer-bar {
+    height: 20px;
+    position: relative;
+    p {
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        font-family: "KeepCalm";
+        font-size: 14px;
+    }
+
+    .progress {
+        height: 20px;
+    }
+
+    .bg-danger {
+        background-color: #ff1177 !important;
+    }
+}
+
+.final-div {
+    color: white;
+    font-family: "KeepCalm";
+    height: 80%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -15px;
+
+    h2 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 60px;
+    }
+
+    a{
+        background: linear-gradient(
+            90deg,
+            #ff1158 0%,
+            #fa378b 33%,
+            #c663ff 65%,
+            #c781f0 100%
+        );
+        background-size: 250% 200%;
+        background-position: center left;
+        padding: 15px 50px;
+        border-radius: 5px;
+        color: white;
+
+        &:hover {
+            animation: SlideRight 1s linear forwards;
+            text-decoration: none;
+            color: white
+        }
+    }
+}
+
+
+@keyframes Neon {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 60px #ff1177,
+            0 0 100px #ff1177, 0 0 150px #ff1177;
+    }
+    to {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff1177, 0 0 25px #ff1177, 0 0 30px #ff1177,
+            0 0 50px #ff1177, 0 0 75px #ff1177;
+    }
+}
+
+@media screen and (max-width: 1040px) {
+}
+
+@media screen and (max-width: 940px) {
+}
