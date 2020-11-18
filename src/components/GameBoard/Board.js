@@ -1,11 +1,21 @@
 import React from 'react';
-import { fakeData } from '../../StaticData/QuestionsApi';
+import { roundOne, roundTwo } from '../../StaticData/QuestionsApi';
 import CategoryQuestions from './Category/Questions';
 import Background from '../Background/Background';
 import Score from './Score';
 import './Board.scss';
+import RoundsTimer from './RoundsTimer';
 
-const Board = ({ setQuestionID, setCategoryName, score, selectedQuestion }) => {
+const Board = ({
+  setQuestionID,
+  setCategoryName,
+  score,
+  selectedQuestion,
+  round,
+  setRound,
+}) => {
+
+
   return (
     <div className='board-wrapper'>
       <Background />
@@ -24,18 +34,33 @@ const Board = ({ setQuestionID, setCategoryName, score, selectedQuestion }) => {
         </div>
         <div className='text-center score-div'>
           <Score score={score} />
+          <RoundsTimer round={round} setRound={setRound} />
         </div>
         <div className='container-xl d-flex justify-content-around  board-div'>
-          {fakeData.map(({ category, questions }) => (
-            <CategoryQuestions
-              key={category}
-              category={category}
-              questions={questions}
-              setQuestionID={setQuestionID}
-              setCategoryName={setCategoryName}
-              selectedQuestion={selectedQuestion}
-            />
-          ))}
+          {round === 1 &&
+            roundOne.map(({ category, questions }) => (
+              <CategoryQuestions
+                key={category}
+                category={category}
+                questions={questions}
+                setQuestionID={setQuestionID}
+                setCategoryName={setCategoryName}
+                selectedQuestion={selectedQuestion}
+              />
+            ))}
+          {round === 2 &&
+            roundTwo.map(({ category, questions }) => (
+              <CategoryQuestions
+                key={category}
+                category={category}
+                questions={questions}
+                setQuestionID={setQuestionID}
+                setCategoryName={setCategoryName}
+                selectedQuestion={selectedQuestion}
+              />
+            ))}
+
+          {round === 3 && <h2>ROUND 3333</h2> }
         </div>
       </div>
     </div>
