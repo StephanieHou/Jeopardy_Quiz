@@ -91,6 +91,10 @@ const App = () => {
             render={() => (
               <FinalScore
                 score={score}
+                round={round}
+                setRound={setRound}
+                setScore={setScore}
+                setSelectedQuestion={setSelectedQuestion}
               />
             )}
           />

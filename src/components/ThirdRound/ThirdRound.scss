@@ -167,13 +167,14 @@
         font-size: 60px;
     }
 
-    a {
+    input {
         background: linear-gradient(90deg, #ff1158 0%, #fa378b 33%, #c663ff 65%, #c781f0 100%);
         background-size: 250% 200%;
         background-position: center left;
         padding: 15px 50px;
         border-radius: 5px;
         color: white;
+        border: none;
 
         &:hover {
             animation: SlideRight 1s linear forwards;

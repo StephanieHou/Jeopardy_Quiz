@@ -1,9 +1,18 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import Background from '../Background/Background';
 import './ThirdRound.scss';
 
-const FinalScore = ({ score }) => {
+const FinalScore = ({ score, round, setRound, setScore, setSelectedQuestion }) => {
+    const [playAgain, setPlayAgain] = useState(false);
+
+    const handleAgain = (event) => {
+        setPlayAgain(true);
+        setRound(1);
+        setScore(0);
+        setSelectedQuestion([]);
+    };
+
     return (
         <div className='third-wrapper'>
             <Background />
@@ -24,10 +33,10 @@ const FinalScore = ({ score }) => {
                     <h2>Your Final Score Is</h2>
                     <p>{score}</p>
                     <div>
-                        <Link
-                            to='board'>
-                            Play Again
-                        </Link>
+                        <form onSubmit={handleAgain}>
+                            <input type="submit" value="Play Again" />
+                        </form>
+                        {playAgain && <Redirect to='/board' />}
                     </div>
                 </div>
             </div>
