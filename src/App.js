@@ -14,7 +14,7 @@ const App = () => {
   const [categoryName, setCategoryName] = useState('');
   const [score, setScore] = useState(0);
   const [selectedQuestion, setSelectedQuestion] = useState([]);
-  const [round, setRound] = useState(1);
+  const [round, setRound] = useState(2);
   const [seconds, setSeconds] = useState(150);
 
   useEffect(() => {
