@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { fakeData } from '../../StaticData/QuestionsApi';
 import Background from '../Background/Background';
 import './ThirdRound.scss';
 

@@ -5,6 +5,7 @@ import Background from '../Background/Background';
 import Score from './Score';
 import './Board.scss';
 import RoundsTimer from './RoundsTimer';
+import { Redirect } from 'react-router-dom';
 
 const Board = ({
   setQuestionID,
@@ -60,7 +61,7 @@ const Board = ({
               />
             ))}
 
-          {round === 3 && <h2>ROUND 3333</h2> }
+          {round === 3 && <Redirect to='/thirdround' />}
         </div>
       </div>
     </div>

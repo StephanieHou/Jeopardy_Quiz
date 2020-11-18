@@ -567,3 +567,18 @@ export const roundTwo = [
     ],
   },
 ];
+
+
+export const roundThree = [
+  {
+    questions: [
+      {
+        id: 1,
+        value: 100,
+        question: 'It stretches southward to Cape Horn',
+        answers: ['Chile', 'China', 'Spain', 'Egypt'],
+        correct_answer: 'Chile',
+      }
+    ]
+  }
+];

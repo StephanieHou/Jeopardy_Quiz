@@ -101,27 +101,21 @@
                 color: white;
             }
 
-            &:focus{
+            &:focus {
                 outline: none;
             }
         }
 
         input[type="submit"] {
             width: 100%;
-            background: linear-gradient(
-                90deg,
-                #ff1158 0%,
-                #fa378b 33%,
-                #c663ff 65%,
-                #c781f0 100%
-            );
+            background: linear-gradient(90deg, #ff1158 0%, #fa378b 33%, #c663ff 65%, #c781f0 100%);
             background-size: 250% 200%;
             background-position: center left;
             color: white;
             padding: 12px;
             border: 2px solid white;
 
-            &:hover{
+            &:hover {
                 animation: SlideRight 1s linear forwards;
             }
         }
@@ -173,14 +167,8 @@
         font-size: 60px;
     }
 
-    a{
-        background: linear-gradient(
-            90deg,
-            #ff1158 0%,
-            #fa378b 33%,
-            #c663ff 65%,
-            #c781f0 100%
-        );
+    a {
+        background: linear-gradient(90deg, #ff1158 0%, #fa378b 33%, #c663ff 65%, #c781f0 100%);
         background-size: 250% 200%;
         background-position: center left;
         padding: 15px 50px;
@@ -190,11 +178,10 @@
         &:hover {
             animation: SlideRight 1s linear forwards;
             text-decoration: none;
-            color: white
+            color: white;
         }
     }
 }
-
 
 @keyframes Neon {
     from {

@@ -17,7 +17,7 @@ class RulesInfo extends React.Component {
                     <div>
                     </div>
                 </div>
-            </div >
+            </div>
         )
     }
 }

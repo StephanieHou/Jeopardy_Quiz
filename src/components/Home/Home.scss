@@ -57,7 +57,7 @@ $color-line-5: #8100ff;
         opacity: 0;
         margin-top: -65px;
         color: white;
-        font-family: 'KeepCalm', sans-serif; 
+        font-family: "KeepCalm", sans-serif;
     }
 
     a {
@@ -77,20 +77,14 @@ $color-line-5: #8100ff;
             font-size: 16px;
             font-weight: 400;
             background: #ff1177;
-            background: linear-gradient(
-                90deg,
-                #ff1158 0%,
-                #fa378b 33%,
-                #c663ff 65%,
-                #c781f0 100%
-            );
+            background: linear-gradient(90deg, #ff1158 0%, #fa378b 33%, #c663ff 65%, #c781f0 100%);
             background-size: 250% 200%;
             background-position: center left;
             padding: 10px;
             border-radius: 4px;
             color: white;
             letter-spacing: 2px;
-            font-family: 'KeepCalm', sans-serif; 
+            font-family: "KeepCalm", sans-serif;
             &:hover {
                 animation: SlideRight 1s linear forwards;
                 text-decoration: none;
@@ -116,7 +110,7 @@ $color-line-5: #8100ff;
             animation: FadeInNeon 1s linear forwards;
             letter-spacing: 10px;
 
-            &:hover{
+            &:hover {
                 animation: FadeInNeon 1s infinite alternate;
             }
 
@@ -148,7 +142,6 @@ $color-line-5: #8100ff;
 /* Media Queries*/
 
 @media screen and (max-width: 960px) {
-
 }
 
 @media screen and (max-width: 650px) {
@@ -240,4 +233,3 @@ $color-line-5: #8100ff;
             0 0 50px #ff1177, 0 0 75px #ff1177;
     }
 }
-

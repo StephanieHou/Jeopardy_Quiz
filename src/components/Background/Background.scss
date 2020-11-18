@@ -4,7 +4,7 @@
     position: relative;
     background-color: black;
 
-    svg{
+    svg {
         width: 100%;
         height: 100%;
     }
@@ -20,7 +20,7 @@
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
     }
-    
+
     #purple {
         fill: none;
         opacity: 0.15;
@@ -32,7 +32,7 @@
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
     }
-    
+
     #white {
         fill: none;
         opacity: 0.15;
@@ -50,12 +50,11 @@
 
 @media screen and (max-width: 650px) {
     .site-bg {
-        svg{
+        svg {
             width: 200%;
         }
     }
 }
-
 
 @keyframes DrawBg {
     to {

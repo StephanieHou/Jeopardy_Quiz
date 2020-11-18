@@ -1,15 +1,19 @@
-import React from 'react';
-import { fakeData } from '../../StaticData/QuestionsApi';
+import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import Background from '../Background/Background';
 import Score from '../GameBoard/Score';
 import './ThirdRound.scss';
 
 const ThirdRound = ({ setWager, score, wager }) => {
+    const [acceptWager, setAcceptWager] = useState(false);
+
     const handleSubmit = (event) => {
-       if(wager > 100){
+        if (wager > score) {
             event.preventDefault();
-            alert('Too HIGH');
-       }
+        }
+        else {
+            setAcceptWager(true);
+        }
     };
     return (
         <div className='third-wrapper'>
@@ -41,6 +45,7 @@ const ThirdRound = ({ setWager, score, wager }) => {
                             </label>
                             <input type="submit" value="Place Bet" />
                         </form>
+                        {acceptWager && <Redirect to='/finalquestion' />}
                     </div>
                 </div>
             </div>

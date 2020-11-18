@@ -1,6 +1,6 @@
 import React from 'react';
 
-const QuestionHolder = ({ value}) => {
+const QuestionHolder = ({ value }) => {
   return <div className="text-center">{value}</div>;
 };
 

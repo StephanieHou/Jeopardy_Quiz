@@ -11,7 +11,7 @@ class Home extends React.Component {
     render() {
         return (
             <div className='homepage'>
-                <Background/>
+                <Background />
                 <div className="home-title">
                     <div>
                         <h1>
