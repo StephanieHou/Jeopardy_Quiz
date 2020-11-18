@@ -17,7 +17,11 @@ const App = () => {
   const [categoryName, setCategoryName] = useState('');
   const [score, setScore] = useState(0);
   const [selectedQuestion, setSelectedQuestion] = useState([]);
+<<<<<<< HEAD
   const [wager, setWager] = useState(0);
+=======
+  const [round, setRound] = useState(1);
+>>>>>>> round2
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 2000);
@@ -37,6 +41,8 @@ const App = () => {
             render={() => (
               <Board
                 score={score}
+                round={round}
+                setRound={setRound}
                 setQuestionID={setQuestionID}
                 setCategoryName={setCategoryName}
                 selectedQuestion={selectedQuestion}
@@ -51,6 +57,7 @@ const App = () => {
                 id={questionID}
                 setScore={setScore}
                 score={score}
+                round={round}
                 categoryName={categoryName}
                 setQuestionID={setQuestionID}
                 setCategoryName={setCategoryName}
