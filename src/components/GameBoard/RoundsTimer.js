@@ -1,21 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
-const RoundsTimer = ({round, setRound}) => {
-  const [seconds, setSeconds] = useState(15);
+const RoundsTimer = ({round, setRound, seconds, setSeconds}) => {
 
-  useEffect(() => {
-    const timerInterval = setInterval(() => {
-      setSeconds((seconds) => seconds - 1);
-    }, 1000);
-
-
-    return () => clearInterval(timerInterval);
-  }, [seconds]);
+  
 
   if(round === 1) {
     if(seconds < 0 ) {
       setRound(2);
-      setSeconds(15);
+      setSeconds(150);
     }
   } else if (round === 2){
     if(seconds < 0 ) {
