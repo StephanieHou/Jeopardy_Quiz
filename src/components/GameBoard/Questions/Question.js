@@ -105,7 +105,11 @@ const Question = ({
               answers={questionData.answers}
             />
           )}
+<<<<<<< HEAD
           <Timer/>
+=======
+          <Timer />
+>>>>>>> 76ebed9659e19482e0de001b948fec4fd9c5cf9e
         </div>
       </div>
     </div>
