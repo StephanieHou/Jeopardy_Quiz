@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Answers from './Answers';
 import Timer from '../Timer';
 import { useHistory } from 'react-router-dom';
-import { fakeData } from '../../../StaticData/QuestionsApi';
+import { roundOne, roundTwo } from '../../../StaticData/QuestionsApi';
 import Background from '../../Background/Background';
 import './Question.scss';
 
@@ -15,13 +15,15 @@ const Question = ({
   score,
   setSelectedQuestion,
   selectedQuestion,
+  round,
 }) => {
   const [questionData, setQuestionData] = useState(null);
+  const game = round === 1 ? roundOne : roundTwo;
   const history = useHistory();
 
   const getQuestionData = (id) => {
     const { questions } =
-      categoryName && fakeData.filter((el) => el.category === categoryName)[0];
+      categoryName && game.filter((el) => el.category === categoryName)[0];
 
     return id && questions.filter((question) => question.id === id)[0];
   };
@@ -60,16 +62,19 @@ const Question = ({
   };
 
   return (
-    <div className="question-wrapper">
+    <div className='question-wrapper'>
       <Background />
-      <div className="question-content">
-        <div className="question-inner-content">
-          <div className="question-text text-center">{questionData && questionData.question}</div>
-          {questionData &&
+      <div className='question-content'>
+        <div className='question-inner-content'>
+          <div className='question-text text-center'>
+            {questionData && questionData.question}
+          </div>
+          {questionData && (
             <Answers
-              getAnswer={getAnswerAndChangeScore} 
+              getAnswer={getAnswerAndChangeScore}
               answers={questionData.answers}
-            />}
+            />
+          )}
           <Timer />
         </div>
       </div>
