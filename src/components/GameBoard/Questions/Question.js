@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { roundOne, roundTwo } from '../../../StaticData/QuestionsApi';
 import Background from '../../Background/Background';
 import './Question.scss';
+import { ToggleButtonGroup } from 'react-bootstrap';
 
 const Question = ({
   id,
@@ -20,6 +21,7 @@ const Question = ({
   setSeconds,
 }) => {
   const [questionData, setQuestionData] = useState(null);
+  const [isCorrect, setIsCorrect] = useState('');
   const game = round === 1 ? roundOne : roundTwo;
   const history = useHistory();
 
@@ -54,22 +56,34 @@ const Question = ({
 
   const getAnswerAndChangeScore = ({ target }) => {
     const answer = target.innerText;
-    if (answer) {
-      if (answer === questionData.correct_answer) {
-        setScore((prevScore) => prevScore + questionData.value);
-      } else {
-        if (score > 0) {
-          setScore((prevScore) => {
-            if (prevScore - questionData.value < 0) {
-              return 0;
-            }
-            return prevScore - questionData.value;
-          });
+    setIsCorrect(
+      answer === questionData.correct_answer ? 'correct' : 'incorrect'
+    );
+
+    setTimeout(() => {
+      if (answer) {
+        if (answer === questionData.correct_answer) {
+          setScore((prevScore) => prevScore + questionData.value);
+        } else {
+          if (score > 0) {
+            setScore((prevScore) => {
+              if (prevScore - questionData.value < 0) {
+                return 0;
+              }
+              return prevScore - questionData.value;
+            });
+          }
         }
+        history.push('/board');
       }
-      history.push('/board');
-    }
+    }, 1500);
   };
+
+    const bg = isCorrect
+    ? isCorrect === 'correct'
+      ? 'text-success'
+      : 'text-danger'
+    : null;
 
   return (
     <div className='question-wrapper'>
@@ -79,13 +93,18 @@ const Question = ({
           <div className='question-text text-center'>
             {questionData && questionData.question}
           </div>
+          <div className="text-center mt-2">
+            <h4 className={bg}>
+              {isCorrect && isCorrect}  
+            </h4>
+          </div>
           {questionData && (
             <Answers
               getAnswer={getAnswerAndChangeScore}
               answers={questionData.answers}
             />
           )}
-          <Timer />
+          {/* <Timer /> */}
         </div>
       </div>
     </div>
