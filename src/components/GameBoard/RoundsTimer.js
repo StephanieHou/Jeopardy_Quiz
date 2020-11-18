@@ -1,6 +1,7 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
-const RoundsTimer = ({ round, setRound, seconds, setSeconds }) => {
+const RoundsTimer = ({ round, setRound, seconds, setSeconds, score }) => {
   if (round === 1) {
     if (seconds < 0) {
       setRound(2);
@@ -8,8 +9,12 @@ const RoundsTimer = ({ round, setRound, seconds, setSeconds }) => {
     }
   } else if (round === 2) {
     if (seconds < 0) {
-      setRound(3);
-      setSeconds(1000);
+      if (score > 0) {
+        setRound(3);
+        setSeconds(1000);
+      } else {
+        return <Redirect to='/finalscore' />;
+      }
     }
   }
 

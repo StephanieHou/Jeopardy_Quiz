@@ -45,6 +45,7 @@ const Board = ({
           <Score score={score} />
           <RoundsTimer
             round={round}
+            score={score}
             setRound={setRound}
             seconds={seconds}
             setSeconds={setSeconds}
