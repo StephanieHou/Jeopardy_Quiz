@@ -178,7 +178,8 @@
 @media screen and (max-width: 940px) {
     .category-name,
     .category-name-text {
-        min-height: 105px;
+        min-height: 90px;
+        height: 90px !important;
     }
 }
 

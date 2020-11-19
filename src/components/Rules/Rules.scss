@@ -101,7 +101,8 @@ $color-line-5: #8100ff;
     top: 50%;
     right: 50%;
     transform: translate(50%, -50%);
-    height: 160px;
+    height: 100%;
+    overflow-y: scroll;
     width: 650px;
     display: flex;
     justify-content: center;
@@ -186,6 +187,7 @@ $color-line-5: #8100ff;
             font-family: "KeepCalm", sans-serif;
             border: none;
             margin: 0px 5px;
+            height: 40px;
             &:hover {
                 animation: SlideRight 1s linear forwards;
                 text-decoration: none;
