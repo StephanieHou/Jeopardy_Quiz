@@ -16,6 +16,8 @@ const Board = ({
   setRound,
   seconds,
   setSeconds,
+  setFullRound,
+  showFullRound
 }) => {
   useEffect(() => {
     const timerInterval = setInterval(() => {
@@ -48,6 +50,8 @@ const Board = ({
             setRound={setRound}
             seconds={seconds}
             setSeconds={setSeconds}
+            setFullRound={setFullRound}
+            showFullRound={showFullRound}
           />
           <Score score={score} />
         </div>

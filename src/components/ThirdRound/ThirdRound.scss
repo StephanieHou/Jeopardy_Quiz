@@ -23,6 +23,7 @@
         margin: 0px;
         display: flex;
         justify-content: center;
+        margin-top: 15px;
         .title-part {
             font-family: "Mexcellent", sans-serif;
             text-transform: uppercase;
@@ -65,7 +66,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: -15px;
+    margin-top: -25px;
 
     h2 {
         font-size: 50px;
