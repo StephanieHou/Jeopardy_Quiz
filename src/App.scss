@@ -42,6 +42,9 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 100;
+    position: absolute;
+    top: 0px;
+    left: 0px;
 
     p {
         font-weight: bold;
