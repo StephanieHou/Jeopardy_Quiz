@@ -5,7 +5,7 @@ const RoundsTimer = ({ round, setRound, seconds, setSeconds, score }) => {
   if (round === 1) {
     if (seconds < 0) {
       setRound(2);
-      setSeconds(15);
+      setSeconds(25);
     }
   } else if (round === 2) {
     if (seconds < 0) {
@@ -19,9 +19,9 @@ const RoundsTimer = ({ round, setRound, seconds, setSeconds, score }) => {
   }
 
   return (
-    <div className='mx-auto mt-4'>
-      <h4 className={seconds > 10 ? 'text-warning' : 'text-danger'}>
-        Round {round} : {round === 3 ? 'Wager' : seconds + 's'}
+    <div className='mx-auto round-timer'>
+      <h4>
+        Round {round}
       </h4>
     </div>
   );

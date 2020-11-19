@@ -42,7 +42,6 @@ const Board = ({
           </h1>
         </div>
         <div className='text-center score-div'>
-          <Score score={score} />
           <RoundsTimer
             round={round}
             score={score}
@@ -50,6 +49,7 @@ const Board = ({
             seconds={seconds}
             setSeconds={setSeconds}
           />
+          <Score score={score} />
         </div>
         <div className='container-xl d-flex justify-content-around  board-div'>
           {round === 1 &&
