@@ -105,3 +105,24 @@
         }
     }
 }
+
+
+@media screen and (max-width: 500px) {
+    .answer-div {
+        .answer-choice {
+            font-size: 12px;
+            min-height: 40px;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .answer-div {
+        .answer-choice {
+            font-size: 11px;
+            min-height: 55px;
+        }
+    }
+}
+
+
