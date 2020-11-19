@@ -11,7 +11,7 @@ const FinalScore = ({ score, round, setRound, setScore, setSelectedQuestion, set
         setRound(1);
         setScore(0);
         setSelectedQuestion([]);
-        setSeconds(30);
+        setSeconds(60);
     };
 
     return (
