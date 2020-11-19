@@ -145,3 +145,10 @@ body {
         transform: rotate(180deg);
     }
 }
+
+@media screen and (max-width: 850px) {
+    .loading .squares-common {
+        height: 100px;
+        width: 100px;
+    }
+}
