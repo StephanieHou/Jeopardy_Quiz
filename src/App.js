@@ -22,9 +22,9 @@ const App = () => {
   const [seconds, setSeconds] = useState(30);
   const [showFullRound, setFullRound] = useState(true);
 
-  //useEffect(() => {
-  //  setTimeout(() => setLoading(false), 2000);
-  //}, []);
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 2000);
+  }, []);
 
   return (
     <>
