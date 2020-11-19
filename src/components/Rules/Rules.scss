@@ -98,6 +98,7 @@ $color-line-5: #8100ff;
 
 .rule-info {
     position: absolute;
+    height: auto !important;
     top: 50%;
     right: 50%;
     transform: translate(50%, -50%);
@@ -110,6 +111,7 @@ $color-line-5: #8100ff;
 
     .ruleslide {
         display: none;
+        height: auto !important;
 
         h2 {
             color: white;
