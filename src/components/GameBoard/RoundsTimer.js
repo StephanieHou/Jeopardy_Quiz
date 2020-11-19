@@ -4,15 +4,21 @@ import { Redirect } from 'react-router-dom';
 const RoundsTimer = ({ round, setRound, seconds, setSeconds, score, showFullRound, setFullRound }) => {
 
   if (round === 1) {
-    setTimeout(() => {
-      setFullRound(false);
-    }, 1500);
-    if (seconds < 0) {
+    if (seconds > 28) {
+      setFullRound(true);
+    }
+    else if (seconds < 0) {
       setRound(2);
       setSeconds(30);
     }
+    else {
+      setFullRound(false);
+    }
   } else if (round === 2) {
-    if (seconds < 0) {
+    if (seconds > 28) {
+      setFullRound(true);
+    }
+    else if (seconds < 0) {
       if (score > 0) {
         setRound(3);
         setSeconds(1000);
@@ -20,15 +26,9 @@ const RoundsTimer = ({ round, setRound, seconds, setSeconds, score, showFullRoun
         return <Redirect to='/finalscore' />;
       }
     }
-  }
-
-  if (round === 2) {
-    if (seconds > 28) {
-      setFullRound(true);
-    }
-    setTimeout(() => {
+    else{
       setFullRound(false);
-    }, 1600);
+    }
   }
 
   const showFull = showFullRound ? 'mx-auto full-round-timer' : 'mx-auto full-round-timer remove-full-round';
