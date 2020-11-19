@@ -9,7 +9,7 @@ const RoundsTimer = ({ round, setRound, seconds, setSeconds, score, showFullRoun
     }, 1500);
     if (seconds < 0) {
       setRound(2);
-      setSeconds(25);
+      setSeconds(30);
     }
   } else if (round === 2) {
     if (seconds < 0) {
@@ -23,7 +23,7 @@ const RoundsTimer = ({ round, setRound, seconds, setSeconds, score, showFullRoun
   }
 
   if (round === 2) {
-    if (seconds > 23) {
+    if (seconds > 28) {
       setFullRound(true);
     }
     setTimeout(() => {

@@ -19,7 +19,7 @@ const App = () => {
   const [selectedQuestion, setSelectedQuestion] = useState([]);
   const [wager, setWager] = useState(0);
   const [round, setRound] = useState(1);
-  const [seconds, setSeconds] = useState(25);
+  const [seconds, setSeconds] = useState(30);
   const [showFullRound, setFullRound] = useState(true);
 
   useEffect(() => {
