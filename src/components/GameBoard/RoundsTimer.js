@@ -5,7 +5,7 @@ const RoundsTimer = ({ round, setRound, seconds, setSeconds, score }) => {
   if (round === 1) {
     if (seconds < 0) {
       setRound(2);
-      setSeconds(25);
+      setSeconds(30);
     }
   } else if (round === 2) {
     if (seconds < 0) {
@@ -21,7 +21,7 @@ const RoundsTimer = ({ round, setRound, seconds, setSeconds, score }) => {
   return (
     <div className='mx-auto round-timer'>
       <h4>
-        Round {round}
+        Round {round}: {seconds + 's'}
       </h4>
     </div>
   );
