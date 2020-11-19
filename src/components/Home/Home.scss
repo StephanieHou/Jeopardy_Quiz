@@ -115,25 +115,29 @@ $color-line-5: #8100ff;
             }
 
             &.ch2 {
-                animation-delay: 0.2s;
-            }
-            &.ch3 {
-                animation-delay: 0.4s;
-            }
-            &.ch4 {
-                animation-delay: 0.6s;
-            }
-            &.ch5 {
                 animation-delay: 0.8s;
             }
-            &.ch6 {
-                animation-delay: 1s;
+
+            &.ch2 {
+                animation-delay: 1.0s;
             }
-            &.ch7 {
+            &.ch3 {
                 animation-delay: 1.2s;
             }
-            &.ch8 {
+            &.ch4 {
                 animation-delay: 1.4s;
+            }
+            &.ch5 {
+                animation-delay: 1.6s;
+            }
+            &.ch6 {
+                animation-delay: 1.8s;
+            }
+            &.ch7 {
+                animation-delay: 2s;
+            }
+            &.ch8 {
+                animation-delay: 2.2s;
             }
         }
     }
