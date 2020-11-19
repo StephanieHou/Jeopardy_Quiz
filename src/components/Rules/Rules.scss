@@ -108,6 +108,10 @@ $color-line-5: #8100ff;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    
+    &::-webkit-scrollbar{
+        display: none;
+    }
 
     .ruleslide {
         display: none;
