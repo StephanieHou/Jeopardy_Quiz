@@ -201,8 +201,46 @@
     }
 }
 
-@media screen and (max-width: 1040px) {
+@media screen and (max-width: 600px) {
+    .third-title {
+        h1 {
+            font-size: 75px;
+            margin-top: 20px;
+        }
+    }
 }
 
-@media screen and (max-width: 940px) {
+@media screen and (max-width: 500px) {
+    .third-title {
+        h1 {
+            font-size: 60px;
+            margin-top: 35px;
+        }
+    }
+
+    .wager-div {
+        .score-wager {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 42px;
+        }
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .third-title {
+        h1 {
+            .title-part {
+                letter-spacing: 11px;
+            }
+        }
+    }
+
+    .final-div {
+        width: 90%;
+        margin: 0 auto;
+    }
 }

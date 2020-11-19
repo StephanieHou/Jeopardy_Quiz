@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Background from '../Background/Background';
 import BoardImg from '../Images/Board.png';
+import BoardMobileImg from '../Images/Board_Mobile.png';
 import WagerImg from '../Images/Wager.png';
 import QuestionImg from '../Images/Question.png';
 import './Rules.scss';
@@ -53,7 +54,8 @@ class RulesInfo extends React.Component {
                     <div className={rulePosition === 2 ? "ruleslide rule2 ruledisplay" : "ruleslide rule2"}>
                         <h2>Rounds</h2>
                         <p>There are a total of three rounds. In the first and second round, you will see a game board as show below:</p>
-                        <img src={BoardImg}></img>
+                        <img src={BoardImg} className="rule-desktop"></img>
+                        <img src={BoardMobileImg} className="rule-mobile"></img>
                         <p>
                             There are six categories with 100 to 500 points below. To begin, you will click on one of the point squares
                             and then be prompted with a question. Each round will have different categories and questions and

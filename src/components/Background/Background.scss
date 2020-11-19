@@ -56,6 +56,14 @@
     }
 }
 
+@media screen and (max-width: 400px) {
+    .site-bg {
+        svg {
+            width: 300%;
+        }
+    }
+}
+
 @keyframes DrawBg {
     to {
         stroke-dashoffset: 0;

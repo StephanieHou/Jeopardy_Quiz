@@ -135,6 +135,10 @@ $color-line-5: #8100ff;
         display: block !important;
     }
 
+    .rule-mobile {
+        display: none;
+    }
+
     .rule2 {
         p {
             font-size: 12px;
@@ -146,7 +150,7 @@ $color-line-5: #8100ff;
             font-size: 12px;
         }
 
-        img{
+        img {
             margin: 0px 20%;
             width: 60%;
         }
@@ -157,7 +161,7 @@ $color-line-5: #8100ff;
             font-size: 12px;
         }
 
-        img{
+        img {
             margin: 0px 20%;
             width: 60%;
         }
@@ -192,21 +196,89 @@ $color-line-5: #8100ff;
 
 /* Media Queries*/
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 690px) {
+    .rule-info {
+        .ruleslide {
+            width: 70%;
+            margin: 0 auto;
+        }
+    }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 520px) {
+    .rule-info {
+        width: 100%;
+
+        .ruleslide {
+            width: 90%;
+        }
+    }
 }
 
 @media screen and (max-width: 490px) {
     .rule-title {
         width: 400px;
     }
+
+    .rule-mobile {
+        display: block !important;
+    }
+
+    .rule-desktop {
+        display: none;
+    }
+
+    .rule-info {
+        .ruleslide {
+            p {
+                font-size: 9px;
+            }
+        }
+
+        .ruleinfo-buttons {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .rule3 img {
+            margin: 0px 10%;
+            width: 80%;
+        }
+
+        .rule4 img {
+            margin: 0px 10%;
+            width: 80%;
+        }
+
+        .rule1 p {
+            font-size: 13px;
+        }
+
+        .rule5 p {
+            font-size: 13px;
+        }
+    }
 }
 
 @media screen and (max-width: 390px) {
     .rule-buttons {
         flex-direction: column;
+    }
+
+    .rule-info {
+        .ruleslide p {
+            font-size: 9px;
+        }
+
+        .rule1 p {
+            font-size: 13px;
+        }
+
+        .rule5 p {
+            font-size: 13px;
+        }
     }
 }
 

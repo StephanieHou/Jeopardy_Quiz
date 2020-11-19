@@ -19,13 +19,13 @@ const Board = ({
   setFullRound,
   showFullRound
 }) => {
-  useEffect(() => {
-    const timerInterval = setInterval(() => {
-      setSeconds((seconds) => seconds - 1);
-    }, 1000);
+  //useEffect(() => {
+  //  const timerInterval = setInterval(() => {
+  //    setSeconds((seconds) => seconds - 1);
+  //  }, 1000);
 
-    return () => clearInterval(timerInterval);
-  }, [seconds]);
+  //  return () => clearInterval(timerInterval);
+  //}, [seconds]);
 
   return (
     <div className='board-wrapper'>
@@ -54,6 +54,7 @@ const Board = ({
             showFullRound={showFullRound}
           />
           <Score score={score} />
+          <p>Scroll For More Categories</p>
         </div>
         <div className='container-xl d-flex justify-content-around  board-div'>
           {round === 1 &&
