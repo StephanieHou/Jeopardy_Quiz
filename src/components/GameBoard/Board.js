@@ -17,7 +17,7 @@ const Board = ({
   seconds,
   setSeconds,
   setFullRound,
-  showFullRound
+  showFullRound,
 }) => {
   useEffect(() => {
     const timerInterval = setInterval(() => {
