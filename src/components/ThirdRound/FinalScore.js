@@ -5,9 +5,18 @@ import './ThirdRound.scss';
 
 const FinalScore = ({ score, round, setRound, setScore, setSelectedQuestion, setSeconds }) => {
     const [playAgain, setPlayAgain] = useState(false);
+    const [seeRules, setSeeRules] = useState(false);
 
     const handleAgain = (event) => {
         setPlayAgain(true);
+        setRound(1);
+        setScore(0);
+        setSelectedQuestion([]);
+        setSeconds(60);
+    };
+
+    const handleRules = (event) => {
+        setSeeRules(true);
         setRound(1);
         setScore(0);
         setSelectedQuestion([]);
@@ -37,7 +46,11 @@ const FinalScore = ({ score, round, setRound, setScore, setSelectedQuestion, set
                         <form onSubmit={handleAgain}>
                             <input type="submit" value="Play Again" />
                         </form>
+                        <form onSubmit={handleRules}>
+                            <input type="submit" value="Rules" />
+                        </form>
                         {playAgain && <Redirect to='/board' />}
+                        {seeRules && <Redirect to='/rulesinfo' />}
                     </div>
                 </div>
             </div>

@@ -166,6 +166,14 @@
     align-items: center;
     margin-top: -15px;
 
+    div {
+        display: flex;
+
+        form {
+            margin: 0px 5px;
+        }
+    }
+
     h2 {
         font-size: 40px;
     }
@@ -178,7 +186,7 @@
         background: linear-gradient(90deg, #ff1158 0%, #fa378b 33%, #c663ff 65%, #c781f0 100%);
         background-size: 250% 200%;
         background-position: center left;
-        padding: 15px 50px;
+        padding: 10px 45px;
         border-radius: 5px;
         color: white;
         border: none;
@@ -243,5 +251,16 @@
     .final-div {
         width: 90%;
         margin: 0 auto;
+
+        h2{
+            font-size: 30px;
+        }
+
+        div {
+            flex-direction: column;
+            form {
+                margin: 5px;
+            }
+        }
     }
 }
