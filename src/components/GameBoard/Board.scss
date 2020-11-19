@@ -13,6 +13,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
 }
 
 .board-title {
@@ -22,6 +23,7 @@
         margin: 0px;
         display: flex;
         justify-content: center;
+        margin-top: 15px;
         .title-part {
             font-family: "Mexcellent", sans-serif;
             text-transform: uppercase;
@@ -114,7 +116,36 @@
 
 .round-timer {
     color: #fd5ca1;
-    font-family: 'KeepCalm';
+    font-family: "KeepCalm";
+}
+
+.full-round-timer {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    background: #ff1177;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-family: "KeepCalm";
+    transition: all 0.2s ease-out;
+    //animation: FadeOut 3s linear forwards;
+    //opacity: 1;
+
+    h4 {
+        font-family: "Mexcellent";
+        font-size: 75px;
+    }
+
+    p{
+        margin-bottom: 0px;
+    }
+
+    &.remove-full-round{
+        display: none !important;
+    }
 }
 
 @keyframes Neon {

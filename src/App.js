@@ -20,6 +20,7 @@ const App = () => {
   const [wager, setWager] = useState(0);
   const [round, setRound] = useState(1);
   const [seconds, setSeconds] = useState(25);
+  const [showFullRound, setFullRound] = useState(true);
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 2000);
@@ -46,6 +47,8 @@ const App = () => {
                 setQuestionID={setQuestionID}
                 setCategoryName={setCategoryName}
                 selectedQuestion={selectedQuestion}
+                showFullRound={showFullRound}
+                setFullRound={setFullRound}
               />
             )}
           />
